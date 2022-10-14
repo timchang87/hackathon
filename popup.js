@@ -4,12 +4,11 @@ const searchBar = document.getElementById('searchBar');
 const submitButton = document.getElementById('submitButton');
 
 let searchValue = searchBar.value;
-let endpoint = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchValue}%20in%20Sydney&key=AIzaSyAq_H_sghOVRxbrXdC76Pbd-NMTMBjezBo`
+let endpoint = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchValue}&key=AIzaSyAq_H_sghOVRxbrXdC76Pbd-NMTMBjezBo`
 
-console.log(searchBar.value);
-submitButton.addEventListener('click', ()=>{
-    console.log(searchBar.value);
-    // fetch(endpoint)
-    //     .then((response) => response.json())
-    //     .then((data) => console.log(data));
+
+submissionForm.addEventListener('submit', ()=>{
+    fetch('https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants%20in%20Sydney&key=AIzaSyAq_H_sghOVRxbrXdC76Pbd-NMTMBjezBo')
+        .then((response) => response.json())
+        .then((data) => console.log(data));
 })
