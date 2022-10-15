@@ -2,7 +2,7 @@
    border: 5px solid black;
 } */
 .body {
-    min-width: 350px;
+    min-width: 300px;
     background-color: FEEFE5;
 }
 
@@ -28,6 +28,9 @@ p {
     max-width: 40%;
     max-height: 30% px;
     margin-bottom: -25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #logo2 {
@@ -56,19 +59,21 @@ p {
     color: black;
     font-family: 'Montserrat', sans-serif;
     margin:25px;
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
     text-align: center;
+    font-size: 15px;
 }
 
 #description {
     color: black;
     font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
 }
 
 .about {
     text-align: center;
     color: black;
-    font-size: 30px;
+    font-size: 15px;
     font-family: 'Montserrat', sans-serif;
 }
 

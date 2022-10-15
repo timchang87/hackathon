@@ -43,7 +43,7 @@ fetch(`https://api.yelp.com/v3/businesses/search?term=${searchBar.value}&locatio
   .then(result => {
     return result['businesses'].filter(function(element){
         // console.log(element);
-        if(element['review_count'] < 110 ) return element;
+        if(element['review_count'] < 100 ) return element;
     })
   })
   .then(result => {
@@ -63,7 +63,7 @@ fetch(`https://api.yelp.com/v3/businesses/search?term=${searchBar.value}&locatio
         //access review count and set it to count variable
         count = result[i]['review_count'];
         let testing = document.createElement('p');
-        testing.innerText = `${name} \n${location} \n Reviews:${count}\n`;
+        testing.innerText = `${name} \n${location} \n Reviews:${count} \n ${Math.floor(Math.random() * 10 )} miles from me`;
             //append them to document
     test.appendChild(testing);
     }
