@@ -1,3 +1,4 @@
+
 //chrome.extension.getBackgroundPage().console.log("This is a popup!");
 const submissionForm = document.getElementById('submissionForm');
 const searchBar = document.getElementById('searchBar');

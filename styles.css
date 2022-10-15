@@ -1,6 +1,6 @@
 .body {
-    min-width: 300px;
-    background-color: #C89093;
+    min-width: 400px;
+    background-color: FEEFE5;
 }
 
 #searchBar {
@@ -12,4 +12,10 @@
 
 p {
     color: red;
+}
+
+#logo {
+    display:flex;
+    max-width: 40%;
+    max-height: 30% px;
 }
