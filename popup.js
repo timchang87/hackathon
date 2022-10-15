@@ -62,7 +62,7 @@ fetch("https://api.yelp.com/v3/businesses/search?term=restaurants&location=92697
         //access review count and set it to count variable
         count = result[i]['review_count'];
         let testing = document.createElement('p');
-        testing.innerText = `${name} \n${location} \n${count}\n`;
+        testing.innerText = `${name} \n${location} \n Reviews:${count}\n`;
             //append them to document
     test.appendChild(testing);
     }

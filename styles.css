@@ -1,17 +1,20 @@
 .body {
-    min-width: 400px;
+    min-width: 350px;
     background-color: FEEFE5;
 }
 
 #searchBar {
     border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
 }
 #submitButton {
     border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 p {
-    color: red;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #logo {
