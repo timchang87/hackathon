@@ -1,6 +1,6 @@
 .body {
     min-width: 300px;
-    background-color: #FEEFE5;
+    background-color: #C89093;
 }
 
 #searchBar {
@@ -8,4 +8,8 @@
 }
 #submitButton {
     border-radius: 25px;
+}
+
+p {
+    color: red;
 }
