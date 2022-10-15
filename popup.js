@@ -6,9 +6,7 @@ const submitButton = document.getElementById('submitButton');
 const test = document.getElementById('test');
 let searchValue = searchBar.value;
 // let endpoint = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchValue}&key=AIzaSyAq_H_sghOVRxbrXdC76Pbd-NMTMBjezBo`
-
-//TRY ANOTHER TUTORIAL
-let queryURL = "https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972";
+// let queryURL = "https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972";
 const apiKey = 'v9P8xDOEoiDUfqFS0FhEn6SWR5oldcQspuSywTOdT-E-eL85rV0f2YE3A6O9jSJuMGLOfvoy9jIZT43I-xU-voAgyfRYsCru66w6HWpIIP9hh0souABSpQPBxxhJY3Yx'
 
 // submissionForm.addEventListener('submit', ()=>{
@@ -27,8 +25,9 @@ const apiKey = 'v9P8xDOEoiDUfqFS0FhEn6SWR5oldcQspuSywTOdT-E-eL85rV0f2YE3A6O9jSJu
 //   .catch(error => console.log('error', error));
 // })
 
-const restaurants = [];
-addEventListener('DOMContentLoaded', ()=> {
+submissionForm.addEventListener('submit', (e)=> {
+//prevent form autosubmission default
+    e.preventDefault();
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer v9P8xDOEoiDUfqFS0FhEn6SWR5oldcQspuSywTOdT-E-eL85rV0f2YE3A6O9jSJuMGLOfvoy9jIZT43I-xU-voAgyfRYsCru66w6HWpIIP9hh0souABSpQPBxxhJY3Yx");
 
@@ -38,17 +37,19 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://api.yelp.com/v3/businesses/search?term=restaurants&location=92697", requestOptions)
+fetch(`https://api.yelp.com/v3/businesses/search?term=${searchBar.value}&location=91789`, requestOptions)
   .then(response => response.json())
 //   .then(response => console.log(response.businesses))
   .then(result => {
     return result['businesses'].filter(function(element){
         // console.log(element);
-        if(element['review_count'] < 100) return element;
+        if(element['review_count'] < 110 ) return element;
     })
   })
   .then(result => {
     console.log(result);
+    //refresh page on new search result
+    if(test.innerHTML != "") test.innerHTML = "";
     //create elements to hold review count, name, location
     let name;
     let location;
@@ -74,6 +75,13 @@ fetch("https://api.yelp.com/v3/businesses/search?term=restaurants&location=92697
 //   })
   .catch(error => console.log('error', error));
 })
+//searchBar.value
+// submissionForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     console.log(`https://api.yelp.com/v3/businesses/search?term=${searchBar.value}&location=92697`)
+// })
+
+
 
 //YELP INFO:
 // Client ID
